@@ -4,6 +4,7 @@ namespace Fgiardina\Mailer\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Mail;
 
 class MailerController extends Controller
 {
