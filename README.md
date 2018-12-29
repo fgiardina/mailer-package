@@ -7,14 +7,34 @@
 ## Install
 `composer require fgiardina/mailer`
 
+
 ## Provider
-config/app.php 'providers' =>
+config/app.php file
+'providers' =>
+
 ``` bash
 Fgiardina\Mailer\MailerServiceProvider::class,
 ```
 
+
 ## Publish
 `php artisan vendor:publish --provider="Fgiardina\Mailer\MailerServiceProvider"`
+
+
+## Configure email settings
+.env file:
+
+``` bash
+  MAIL_DRIVER=smtp
+  MAIL_HOST=smtp.mailtrap.io
+  MAIL_PORT=2525
+  MAIL_USERNAME=xxxxxxxxxxxx
+  MAIL_PASSWORD=xxxxxxxxxxxx
+  MAIL_ENCRYPTION=null
+  MAIL_FROM_ADDRESS=example@mail.com
+  MAIL_FROM_NAME="example"
+```
+
 
 ## Usage
 ``` bash
@@ -33,19 +53,6 @@ curl -X POST \
 }'
 ```
 
-## Configure email settings
-.env file:
-
-``` bash
-  MAIL_DRIVER=smtp
-  MAIL_HOST=smtp.mailtrap.io
-  MAIL_PORT=2525
-  MAIL_USERNAME=xxxxxxxxxxxx
-  MAIL_PASSWORD=xxxxxxxxxxxx
-  MAIL_ENCRYPTION=null
-  MAIL_FROM_ADDRESS=example@mail.com
-  MAIL_FROM_NAME="example"
-```
 
 ## License
 The MIT License (MIT). Please see [License File](/LICENSE.md) for more information.
