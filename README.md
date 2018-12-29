@@ -7,11 +7,25 @@
 ## Install
 `composer require fgiardina/mailer`
 
-## Usage
-Mail Sender Package
-
 ## Publish
 `php artisan vendor:publish --provider="Fgiardina\Mailer\MailerServiceProvider"`
+
+## Usage
+`
+curl -X POST \
+  http://YOUR-DOMAIN/mailer/sendemail \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "to_name": "John Doe",
+    "to_email": "JohnDoe@gmail.com",
+    "to_bcc_email": "JohnDoe2@gmail.com",
+    "subject": "Email title",
+    "header": "<strong>Header Info</strong>",
+    "body": "<br/><br/>Content Info<br/><br/><br/>",
+    "footer": "<strong>Footer Info</strong>",
+    "template": "basic"
+}'
+`
 
 ## Testing
 Run the tests with:

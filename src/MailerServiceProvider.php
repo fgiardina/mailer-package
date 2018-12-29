@@ -23,6 +23,7 @@ class MailerServiceProvider extends ServiceProvider
         );
         $this->publishes([
             __DIR__ . '/config/Mailer.php' => config_path('Mailer.php'),
+            __DIR__ . '/resources/views' => resource_path('views/vendor/mailer'),
         ]);
     }
 
