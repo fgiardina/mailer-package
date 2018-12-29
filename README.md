@@ -33,18 +33,19 @@ curl -X POST \
 }'
 ```
 
-## Testing
-Run the tests with:
+## Configure email settings
+.env file:
 
 ``` bash
-vendor/bin/phpunit
+  MAIL_DRIVER=smtp
+  MAIL_HOST=smtp.mailtrap.io
+  MAIL_PORT=2525
+  MAIL_USERNAME=xxxxxxxxxxxx
+  MAIL_PASSWORD=xxxxxxxxxxxx
+  MAIL_ENCRYPTION=null
+  MAIL_FROM_ADDRESS=example@mail.com
+  MAIL_FROM_NAME="example"
 ```
-
-## Contributing
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Security
-If you discover any security-related issues, please email fgiardina@outlook.com instead of using the issue tracker.
 
 ## License
 The MIT License (MIT). Please see [License File](/LICENSE.md) for more information.
