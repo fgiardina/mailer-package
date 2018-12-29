@@ -13,6 +13,10 @@ class MailerController extends Controller
     {
         $data = $request->getContent();
         $data = json_decode($data);
+        
+        if ($request->request) {
+            $data = $request;
+        }
 
         $email = Mail::to($data->to_email);
         if (isset($data->to_bcc_email)) {
@@ -23,4 +27,10 @@ class MailerController extends Controller
         return json_encode(['success'=>true]);
     
     }
+
+    public function testEmail()
+    {
+        return view(config('Mailer.views_folder').".testform");
+    }
+    
 }

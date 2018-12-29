@@ -33,10 +33,20 @@ Fgiardina\Mailer\MailerServiceProvider::class,
   MAIL_ENCRYPTION=null
   MAIL_FROM_ADDRESS=example@mail.com
   MAIL_FROM_NAME="example"
+
+  MAILER_VIEWS_FOLDER=vendor.mailer
+  MAILER_SEND_ROUTE="/mailer/sendemail"
+  MAILER_TEST_ROUTE="/mailer/testemail"
 ```
 
 
 ## Usage
+* Web form
+``` bash
+http://YOUR-DOMAIN/mailer/testemail
+```
+
+* console or postman
 ``` bash
 curl -X POST \
   http://YOUR-DOMAIN/mailer/sendemail \
