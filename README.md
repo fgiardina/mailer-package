@@ -11,7 +11,7 @@
 Mail Sender Package
 
 ## Publish
-php artisan vendor:publish --provider="Fgiardina\Mailer\MailerServiceProvider"
+`php artisan vendor:publish --provider="Fgiardina\Mailer\MailerServiceProvider"`
 
 ## Testing
 Run the tests with:
