@@ -7,12 +7,15 @@
 ## Install
 `composer require fgiardina/mailer`
 
+## Provider
+config/app.php 'providers' =>
+`Fgiardina\Mailer\MailerServiceProvider::class,`
+
 ## Publish
 `php artisan vendor:publish --provider="Fgiardina\Mailer\MailerServiceProvider"`
 
 ## Usage
-`
-curl -X POST \
+`curl -X POST \
   http://YOUR-DOMAIN/mailer/sendemail \
   -H 'Content-Type: application/json' \
   -d '{
@@ -24,8 +27,7 @@ curl -X POST \
     "body": "<br/><br/>Content Info<br/><br/><br/>",
     "footer": "<strong>Footer Info</strong>",
     "template": "basic"
-}'
-`
+}'`
 
 ## Testing
 Run the tests with:
