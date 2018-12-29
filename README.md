@@ -9,13 +9,16 @@
 
 ## Provider
 config/app.php 'providers' =>
-`Fgiardina\Mailer\MailerServiceProvider::class,`
+``` bash
+Fgiardina\Mailer\MailerServiceProvider::class,
+```
 
 ## Publish
 `php artisan vendor:publish --provider="Fgiardina\Mailer\MailerServiceProvider"`
 
 ## Usage
-`curl -X POST \
+``` bash
+curl -X POST \
   http://YOUR-DOMAIN/mailer/sendemail \
   -H 'Content-Type: application/json' \
   -d '{
@@ -27,7 +30,8 @@ config/app.php 'providers' =>
     "body": "<br/><br/>Content Info<br/><br/><br/>",
     "footer": "<strong>Footer Info</strong>",
     "template": "basic"
-}'`
+}'
+```
 
 ## Testing
 Run the tests with:
