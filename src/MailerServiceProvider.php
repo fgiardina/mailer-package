@@ -15,7 +15,7 @@ class MailerServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
-        $this->loadViewsFrom(__DIR__ . '/resources/views');
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'Mailer');
 
         $this->mergeConfigFrom(
             __DIR__ . '/config/Mailer.php',
