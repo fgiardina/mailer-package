@@ -6,7 +6,9 @@
 
 ## Installation
 
-`composer require fgiardina/mailer`
+```bash
+composer require fgiardina/mailer
+```
 
 If you are using Laravel 5.5+, there is no need to manually register the service provider. However, if you are using an earlier version of Laravel, register the `MailerServiceProvider` in your `app` configuration file:
 
@@ -19,13 +21,14 @@ If you are using Laravel 5.5+, there is no need to manually register the service
 ```
 
 ## Publish
-`php artisan vendor:publish --provider="Fgiardina\Mailer\MailerServiceProvider"`
-
+```bash
+php artisan vendor:publish --provider="Fgiardina\Mailer\MailerServiceProvider"
+```
 
 ## Configure email settings
 .env file:
 
-``` bash
+```bash
   MAIL_DRIVER=smtp
   MAIL_HOST=smtp.mailtrap.io
   MAIL_PORT=2525
@@ -35,28 +38,28 @@ If you are using Laravel 5.5+, there is no need to manually register the service
   MAIL_FROM_ADDRESS=example@mail.com
   MAIL_FROM_NAME="example"
 
-  MAILER_VIEWS_FOLDER=vendor.mailer
-  MAILER_SEND_ROUTE="/mailer/sendemail"
-  MAILER_TEST_ROUTE="/mailer/testemail"
+  MAILER_VIEWS_FOLDER=vendor.mailer #change custom path
+  MAILER_SEND_ROUTE="/mailer/sendemail" #change custom route
+  MAILER_TEST_ROUTE="/mailer/testemail" #change custom route
 ```
 
 
 ## Usage
 
 * Web form
-``` bash
+```bash
 http://YOUR-DOMAIN/mailer/testemail
 ```
 
 * Terminal or Postman client
-``` bash
+```bash
 curl -X POST \
   http://YOUR-DOMAIN/mailer/sendemail \
   -H 'Content-Type: application/json' \
   -d '{
     "to_name": "John Doe",
-    "to_email": "JohnDoe@gmail.com",
-    "to_bcc_email": "JohnDoe2@gmail.com",
+    "to_email": "john@doe.com",
+    "to_bcc_email": "john2@doe.com",
     "subject": "Email title",
     "header": "<strong>Header Info</strong>",
     "body": "Content Info 1<br/>Content Info 2<br/>Content Info 3",
@@ -64,18 +67,41 @@ curl -X POST \
     "template": "format"
 }'
 ```
+- URL default: `http://YOUR-DOMAIN/mailer/sendemail` 
+- URL custom: `http://YOUR-DOMAIN/{MAILER_SEND_ROUTE}` value in .env file
+
+Required: `to_email`, `subject`, `body`, `template`
 
 ## Templates
 HTML template without format
-``` json
+```json
   "template": "basic"
 ```
-Or
 
 HTML formatted template
-``` json
+```json
   "template": "format"
 ```
+
+### Custom templates:
+`Path: MAILER_VIEWS_FOLDER`
+```php
+<body>
+    //...
+    @if (isset($data->header))
+        <div>{!! $data->header !!}</div>
+    @endif
+    //...
+    <div>{!! $data->body !!}</div>
+    //...
+    @if (isset($data->footer))
+        <div>{!! $data->footer !!}</div>
+    @endif
+    //...
+</body>    
+```
+
+
 
 ## License
 The MIT License (MIT). Please see [License File](/LICENSE.md) for more information.
