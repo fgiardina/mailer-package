@@ -41,6 +41,7 @@ php artisan vendor:publish --provider="Fgiardina\Mailer\MailerServiceProvider"
   MAILER_VIEWS_FOLDER=vendor.mailer #change custom path
   MAILER_SEND_ROUTE="/mailer/sendemail" #change custom route
   MAILER_TEST_ROUTE="/mailer/testemail" #change custom route
+  MAILER_TEST_MAIL_FORM_ENABLE=true #false: disabled public access test from {MAILER_TEST_ROUTE}
 ```
 
 
