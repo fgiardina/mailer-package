@@ -87,7 +87,11 @@ HTML formatted template
 ### Custom templates:
 `Path: MAILER_VIEWS_FOLDER`
 
-mycustomtemplate.blade.php
+```json
+  "template": "mycustomtemplate"
+```
+
+`mycustomtemplate.blade.php`
 ```php
 <body>
     ...
