@@ -18,7 +18,7 @@
 Body Email
 <br/></textarea>*<br/>
         <input type="text" name="footer" placeholder="footer" value="Footer Email"><br/>
-        <input type="text" name="template" placeholder="template: exmaple: basic" value="basic" required>*<br/>
+        <input type="text" name="template" placeholder="template: exmaple: basic" value="format" required>*<br/>
         <input type="submit" class="button-blue" value="Send">
     </form>
 </body>
