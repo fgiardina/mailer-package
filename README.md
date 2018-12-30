@@ -59,12 +59,23 @@ curl -X POST \
     "to_bcc_email": "JohnDoe2@gmail.com",
     "subject": "Email title",
     "header": "<strong>Header Info</strong>",
-    "body": "<br/><br/>Content Info<br/><br/><br/>",
+    "body": "Content Info 1<br/>Content Info 2<br/>Content Info 3",
     "footer": "<strong>Footer Info</strong>",
-    "template": "basic"
+    "template": "format"
 }'
 ```
 
+## Templates
+HTML template without format
+``` json
+  "template": "basic"
+```
+Or
+
+HTML formatted template
+``` json
+  "template": "format"
+```
 
 ## License
 The MIT License (MIT). Please see [License File](/LICENSE.md) for more information.
