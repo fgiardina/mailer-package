@@ -1,6 +1,6 @@
 {
     "name": "fgiardina/mailer",
-    "description": "Your Package Description here",
+    "description": "Laravel email sender",
     "type": "library",
     "license": "MIT",
     "authors": [

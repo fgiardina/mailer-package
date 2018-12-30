@@ -4,18 +4,19 @@
 [![Travis](https://img.shields.io/travis/fgiardina/mailer.svg?style=flat-square)]()
 [![Total Downloads](https://img.shields.io/packagist/dt/fgiardina/mailer.svg?style=flat-square)](https://packagist.org/packages/fgiardina/mailer)
 
-## Install
+## Installation
+
 `composer require fgiardina/mailer`
 
+If you are using Laravel 5.5+, there is no need to manually register the service provider. However, if you are using an earlier version of Laravel, register the `MailerServiceProvider` in your `app` configuration file:
 
-## Provider
-config/app.php file
-'providers' =>
+```php
+'providers' => [
+    // Other service providers...
 
-``` bash
-Fgiardina\Mailer\MailerServiceProvider::class,
+    Fgiardina\Mailer\MailerServiceProvider::class,
+],
 ```
-
 
 ## Publish
 `php artisan vendor:publish --provider="Fgiardina\Mailer\MailerServiceProvider"`
@@ -41,12 +42,13 @@ Fgiardina\Mailer\MailerServiceProvider::class,
 
 
 ## Usage
+
 * Web form
 ``` bash
 http://YOUR-DOMAIN/mailer/testemail
 ```
 
-* console or postman
+* Terminal or Postman client
 ``` bash
 curl -X POST \
   http://YOUR-DOMAIN/mailer/sendemail \
