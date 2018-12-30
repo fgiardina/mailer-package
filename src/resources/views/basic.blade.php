@@ -7,14 +7,14 @@
     <title>Email</title>
 </head>
 <body>
-    @if (isset($data->header))
+    @isset($data->header)
         <header>{!! $data->header !!}</header>  
-    @endif
-    
+    @endisset
+
     <div>{!! $data->body !!}</div>
     
-    @if (isset($data->footer))
+    @isset($data->footer)
         <footer>{!! $data->footer !!}</footer>  
-    @endif
+    @endisset
 </body>
 </html>

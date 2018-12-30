@@ -86,20 +86,22 @@ HTML formatted template
 
 ### Custom templates:
 `Path: MAILER_VIEWS_FOLDER`
+
+mycustomtemplate.blade.php
 ```php
 <body>
-    //...
-    @if (isset($data->header))
-        <div>{!! $data->header !!}</div>
-    @endif
-    //...
+    ...
+    @isset($data->header)
+        <header>{!! $data->header !!}</header>  
+    @endisset
+    ...
     <div>{!! $data->body !!}</div>
-    //...
-    @if (isset($data->footer))
-        <div>{!! $data->footer !!}</div>
-    @endif
-    //...
-</body>    
+    ... 
+    @isset($data->footer)
+        <footer>{!! $data->footer !!}</footer>  
+    @endisset
+    ...
+</body>  
 ```
 
 
