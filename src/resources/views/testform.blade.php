@@ -10,8 +10,8 @@
     <h1>Test Mailer</h1>
     <form action="{{ route('fgiardina.mailer.sendemail') }}" method="POST">
         <input type="text" name="to_name" placeholder="to_name" value="John Doe"><br/>
-        <input type="text" name="to_email" placeholder="to_email" value="johndoe@mail.com" required>*<br/>
-        <input type="text" name="to_bcc_email" placeholder="to_bcc_email" value="johndoe2@mail.com"><br/>
+        <input type="email" name="to_email" placeholder="to_email" value="johndoe@mail.com" required>*<br/>
+        <input type="email" name="to_bcc_email" placeholder="to_bcc_email" value="johndoe2@mail.com"><br/>
         <input type="text" name="subject" placeholder="subject" value="Subject Email" required>*<br/>
         <input type="text" name="header" placeholder="header" value="Header Email"><br/>
         <textarea name="body" id="" cols="30" rows="10" required><br/>
@@ -30,7 +30,7 @@ body {
     margin-top: 20px;
     color: black;
 }
-input[type=text], textarea {
+input[type=text], input[type=email], textarea {
   width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
