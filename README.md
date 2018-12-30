@@ -1,4 +1,4 @@
-# mailer
+# Mailer
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Travis](https://img.shields.io/travis/fgiardina/mailer.svg?style=flat-square)]()
