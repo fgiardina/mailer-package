@@ -47,7 +47,7 @@
                                                                         <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #808080;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
                                                                             <h1 style="display: block;margin: 0;padding: 0;color: #222222;font-family: Helvetica;font-size: 40px;font-style: normal;font-weight: bold;line-height: 150%;letter-spacing: normal;text-align: center;">
                                                                                 @if (isset($data->header))<br>
-																				    {!! $data->header !!}<br>
+																				    {{ $data->header }}<br>
                                                                                 @endif
                                                                             </h1>
                                                                         </td>
@@ -96,7 +96,7 @@
                                                                     <tr>
                                                                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #222222;font-family: Arial, &quot;helvetica neue&quot: ;, helvetica, sans-serif: ;font-size: 18px;line-height: 100%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;text-align: left;">
                                                                             <h3 style="display: block;margin: 0;padding: 0;color: #444444;font-family: Helvetica;font-size: 22px;font-style: normal;font-weight: bold;line-height: 150%;letter-spacing: normal;text-align: left;">
-                                                                                {!! $data->body !!}
+                                                                                {{ $data->body }}
                                                                             </h3>
                                                                         </td>
                                                                     </tr>
@@ -149,7 +149,7 @@
                                                                     <tr>
                                                                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #222222;font-family: Arial, &quot;helvetica neue&quot: ;, helvetica, sans-serif: ;font-size: 24px;font-style: normal;font-weight: bold;line-height: 100%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;">
                                                                             @if (isset($data->footer))<br>
-                                                                                {!! $data->footer !!}<br>
+                                                                                {{ $data->footer }}<br>
                                                                             @endif
                                                                         </td>
                                                                     </tr>

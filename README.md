@@ -62,9 +62,9 @@ curl -X POST \
     "to_email": "john@doe.com",
     "to_bcc_email": "john2@doe.com",
     "subject": "Email title",
-    "header": "<strong>Header Info</strong>",
-    "body": "Content Info 1<br/>Content Info 2<br/>Content Info 3",
-    "footer": "<strong>Footer Info</strong>",
+    "header": "Header Info",
+    "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "footer": "Footer Info",
     "template": "format"
 }'
 ```
@@ -93,22 +93,26 @@ HTML formatted template
 
 `mycustomtemplate.blade.php`
 ```php
+// ...HTML
 <body>
-    ...
+    // ...
     @isset($data->header)
-        <header>{!! $data->header !!}</header>  
+        <header>{{ $data->header }}</header>  
     @endisset
-    ...
-    <div>{!! $data->body !!}</div>
-    ... 
+    // ...
+    <div>{{ $data->body }}</div>
+    // ... 
     @isset($data->footer)
-        <footer>{!! $data->footer !!}</footer>  
+        <footer>{{ $data->footer }}</footer>  
     @endisset
-    ...
+    // ...
 </body>  
+// ...HTML
 ```
 
-
+| <strong style="color: white; background-color: orange">Attention!</strong>|
+| -- |
+| Never use {!! !!} in template. **This can cause security problems**|
 
 ## License
 The MIT License (MIT). Please see [License File](/LICENSE.md) for more information.

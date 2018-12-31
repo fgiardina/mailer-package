@@ -8,13 +8,13 @@
 </head>
 <body>
     @isset($data->header)
-        <header>{!! $data->header !!}</header>  
+        <header>{{ $data->header }}</header>  
     @endisset
 
-    <div>{!! $data->body !!}</div>
+    <div>{{ $data->body }}</div>
     
     @isset($data->footer)
-        <footer>{!! $data->footer !!}</footer>  
+        <footer>{{ $data->footer }}</footer>  
     @endisset
 </body>
 </html>
