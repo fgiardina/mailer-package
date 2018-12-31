@@ -63,7 +63,7 @@ curl -X POST \
     "to_bcc_email": "john2@doe.com",
     "subject": "Email title",
     "header": "Header Info",
-    "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
     "footer": "Footer Info",
     "template": "format"
 }'
