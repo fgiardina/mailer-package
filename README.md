@@ -69,7 +69,7 @@ curl -X POST \
 }'
 ```
 - URL default: `http://YOUR-DOMAIN/mailer/sendemail` 
-- URL custom: `http://YOUR-DOMAIN/{MAILER_SEND_ROUTE}` value in .env file
+- URL custom: `http://YOUR-DOMAIN/{MAILER_SEND_ROUTE}` replace by value in .env file
 
 Required: `to_email`, `subject`, `body`, `template`
 
