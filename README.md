@@ -95,23 +95,23 @@ HTML formatted template
 ```php
 // ...HTML
 <body>
-    // ...
+
     @isset($data->header)
         <header>{{ $data->header }}</header>  
     @endisset
-    // ...
+
     <div>{{ $data->body }}</div>
-    // ... 
+
     @isset($data->footer)
         <footer>{{ $data->footer }}</footer>  
     @endisset
-    // ...
+
 </body>  
 // ...HTML
 ```
 
-| <strong style="color: white; background-color: orange">Attention!</strong>|
-| -- |
+| Attention!|
+| --------- |
 | Never use {!! !!} in template. **This can cause security problems**|
 
 ## License
