@@ -12,8 +12,8 @@ class MailerController extends Controller
     public function sendemail(Request $request)
     {
         $data = $request->getContent();
-        $data = json_decode($data);
-        
+        // $data = json_decode($data);
+
         if ($request->request) {
             $data = $request;
         }
@@ -25,12 +25,12 @@ class MailerController extends Controller
         $email->send(new SendMail($data));
 
         return json_encode(['success'=>true]);
-    
+
     }
 
     public function testEmail()
     {
         return view(config('Mailer.views_folder').".testform");
     }
-    
+
 }

@@ -30,9 +30,18 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->from(config('mail.from.address'), config('mail.from.name'))
+        $email = $this->from(config('mail.from.address'), config('mail.from.name'))
             ->subject($this->data->subject)
-            ->view(config('Mailer.views_folder').'.' . $this->data->template)
+            ->view(config('Mailer.views_folder') . '.' . $this->data->template)
             ->with('data', $this->data);
+
+        if (isset($this->data->attach)) {
+            $email->attach(storage_path("app/attach".$this->data->attach['path']), [
+                'as' => $this->data->attach['filename'],
+                'mime' => $this->data->attach['mime_type'], // https://developer.mozilla.org/es/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Lista_completa_de_tipos_MIME
+            ]);
+        }
+
+        return $email;
     }
 }
